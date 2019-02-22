@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<title>Inspire</title>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -18,11 +20,16 @@
 		The Quote
 	</div>
 
-	<div>
-		A Todo List
+	<div class='contianer-fluid'>
+		<h2>My ToDo List</h2>
 		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
+		<form onsubmit="app.controllers.todoController.addTodo(event)">
+			<input type="text" id="description" placeholder="Add Description...">
+			<button type="submit">Add ToDo</button>
+		</form>
+		<div id="todos">
+
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
