@@ -12,25 +12,36 @@
 </head>
 
 <body id="bg-image">
-	<div id="weather">
-		Your Weather Template
-	</div>
+	<header class="contianer">
+		<div class="row">
+			<div class="col-2">
+				<h5 class="bg-todos no-margin text-center">My ToDo List</h5>
+				<div id="todo-error"></div>
+				<form class="bg-todos" onsubmit="app.controllers.todoController.addTodo(event)">
+					<input type="text" id="description" placeholder="Add Description...">
+					<button type="submit">Add</button>
+				</form>
+				<div id="todos">
 
-	<div id="quote">
-		The Quote
-	</div>
+				</div>
+			</div>
+			<div class="col ml-auto weather-display" id="weather">
 
-	<div class='contianer-fluid'>
-		<h2>My ToDo List</h2>
-		<div id="todo-error"></div>
-		<form onsubmit="app.controllers.todoController.addTodo(event)">
-			<input type="text" id="description" placeholder="Add Description...">
-			<button type="submit">Add ToDo</button>
-		</form>
-		<div id="todos">
-
+			</div>
 		</div>
-	</div>
+
+
+		<div class="row footer">
+			<div class="col weather-display" id="quote">
+
+			</div>
+		</div>
+	</header>
+
+
+
+
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>

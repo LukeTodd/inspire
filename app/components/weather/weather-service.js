@@ -36,4 +36,9 @@ export default class WeatherService {
 				_setState('weather', new Weather(res.data))
 			})
 	}
+	// 		ConvertToFar() {
+	// 			return (Weather. * (9 / 5)) + 32
+	// 			_setState('weather', 
+
+	// }
 }

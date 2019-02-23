@@ -8,23 +8,16 @@ export default class Weather {
     // You should probably convert the temperature data to either F or C
     this.city = data.name
     this.kelvin = data.main.temp
-    this.weather = data.weather.main
-    this.icon = data.weather.icon
+    this.weather = data.weather[0].main
+    this.icon = data.weather[0].icon
     this.wind = data.wind.speed
-
-    function ConvertToFar() {
-      return (this.kelvin * (9 / 5)) + 32
-
-      this.faren = ConvertToFar()
-    }
   }
   getTemplate() {
     return `
-    <h2>${this.city}</h2>
-    <p>${this.faren}</p>
+    <h4>${this.kelvin}</h4>
+    <p>${this.city}</p>
     <p>${this.weather}</p>
-    <p>${this.icon}</p>
-    <p>Wind: ${this.wind}mph</p>
+    <p>Wind - ${this.wind}mph</p>
     `
   }
 }

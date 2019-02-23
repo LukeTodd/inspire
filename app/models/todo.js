@@ -8,10 +8,10 @@ export default class Todo {
 
   getTemplate() {
     return `
-			<div class="card">
-        <ul class="list-group list-group-flush">
+			<div class="card bg-todos">
+        <ul class="no-margin">
 
-          <li class="list-group-item">${this.description}<button 
+          <li id="todo-list">${this.description}<button id="btn-style" 
           onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button></li>
 				</ul>
 			</div>
