@@ -12,30 +12,32 @@
 </head>
 
 <body id="bg-image">
-	<header class="contianer">
+	<header class="container-fluid">
 		<div class="row">
-			<div class="col-2">
-				<h5 class="bg-todos no-margin text-center">My ToDo List</h5>
-				<div id="todo-error"></div>
-				<form class="bg-todos" onsubmit="app.controllers.todoController.addTodo(event)">
-					<input type="text" id="description" placeholder="Add Description...">
-					<button type="submit">Add</button>
-				</form>
-				<div id="todos">
+			<div class="col-3 mr-auto" style="padding-left: 3px; padding-top: 3px;">
+				<div class="todos-display">
+					<h5 class="no-margin text-center pb-1">My To-Do List</h5>
+					<div id="todo-error"></div>
+					<form class="form-display d-flex pb-1" onsubmit="app.controllers.todoController.addTodo(event)">
+						<input class="w-100 form-box" type="text" id="description" placeholder="Add To-Do...">
+						<button class="form-box" type="submit">Add</button>
+					</form>
+					<div id="todos">
 
+					</div>
 				</div>
 			</div>
-			<div class="col ml-auto weather-display" id="weather">
+			<div class="col-2 ml-auto" style="padding-right: 0px;" id="weather">
 
 			</div>
 		</div>
 
 
-		<div class="row footer">
-			<div class="col weather-display" id="quote">
+		<footer class="row">
+			<div class="col footer" id="quote">
 
 			</div>
-		</div>
+		</footer>
 	</header>
 
 

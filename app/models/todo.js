@@ -8,12 +8,9 @@ export default class Todo {
 
   getTemplate() {
     return `
-			<div class="card bg-todos">
-        <ul class="no-margin">
-
-          <li id="todo-list">${this.description}<button id="btn-style" 
-          onclick="app.controllers.todoController.removeTodo('${this._id}')">X</button></li>
-				</ul>
+			<div class="">
+          <p style="padding-left: 10px;" id="todo-list">${this.description}<button id="btn-style" 
+          onclick="app.controllers.todoController.removeTodo('${this._id}')">x</button></p>
 			</div>
   `}
 }

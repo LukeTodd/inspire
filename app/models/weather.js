@@ -1,3 +1,6 @@
+
+
+
 export default class Weather {
   constructor(data) {
     console.log('[RAW WEATHER API DATA]', data);
@@ -11,13 +14,22 @@ export default class Weather {
     this.weather = data.weather[0].main
     this.icon = data.weather[0].icon
     this.wind = data.wind.speed
+    this.img = "http://openweathermap.org/img/w/" + this.icon + ".png";
+    this.farenheit = function () {
+      return ((this.kelvin - 273.15) * (9 / 5) + 32).toFixed(0)
+    }
   }
   getTemplate() {
     return `
-    <h4>${this.kelvin}</h4>
-    <p>${this.city}</p>
-    <p>${this.weather}</p>
-    <p>Wind - ${this.wind}mph</p>
+    <div class="weather-display">
+    <h4 class="degree-display center-text">${this.farenheit()}° F</h4>
+    
+    <img class="w-icon" src="${this.img}">
+    
+    </div>
     `
   }
+
 }
+{/* <p class="no-margin">${this.city}</p> */ }
+{/* <p class="no-margin">Wind: ${this.wind}mph</p> */ }
