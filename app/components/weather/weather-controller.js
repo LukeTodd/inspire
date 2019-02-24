@@ -5,7 +5,7 @@ var _weatherService = new WeatherService()
 function drawWeather() {
 
 	document.querySelector('#weather').innerHTML = _weatherService.Weather.getTemplate()
-	console.log("THE WEATHER MAN SAYS:", _weatherService.Weather)
+
 }
 
 export default class WeatherController {

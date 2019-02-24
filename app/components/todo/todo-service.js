@@ -34,7 +34,6 @@ export default class TodoService {
 	}
 
 	getTodos() {
-		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
 				let data = res.data.data.map(t => new Todo(t))
@@ -55,14 +54,24 @@ export default class TodoService {
 
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
+		let checkBox = document.getElementById("todo-list")
+		debugger
+		let description = _state.todos.description
+		if (checkBox.checked == true) (todo.completed = true)
+		else todo.completed = false
+
+		if (checkBox.checked == true) { localStorage.setItem('todo-list', checkBox.checked) }
 		// Be sure to change the completed property to its opposite
 		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
-
 		todoApi.put(todoId, todo)
 			.then(res => {
+				todo = res.data.data.map(t => new Todo(t))
+				_setState('todos', todo)
+
+				// _setState('todos', data)
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
-			.catch(err => _setState('error', err.response.data))
+		// .catch(err => _setState('error', err.response.data))
 	}
 
 	removeTodo(todoId) {
