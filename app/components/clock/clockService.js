@@ -72,7 +72,7 @@ function _showTime() {
   document.getElementById("clock-display").innerText = time;
   document.getElementById("clock-display").textContent = time;
 
-  setInterval(_showTime, 1000);
+  setInterval(_showTime, 500);
 }
 
 export default class ClockService {
