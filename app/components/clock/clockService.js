@@ -58,7 +58,7 @@ function _showTime() {
 
 
 
-  if (hour < 10 && amPm == 'AM' || hour >= 4 && amPm == 'AM') { greeting = 'Morning!' }
+  if (hour < 10 && amPm == 'AM' || hour >= 4 && hour < 10 && amPm == 'AM') { greeting = 'Morning!' }
   else if (hour <= 8 && amPm == 'PM' || hour >= 5 && amPm == 'PM') { greeting = 'Evening!' }
   else if (hour >= 10 && amPm == 'AM' || hour < 5 && amPm == 'PM') { greeting = 'Day!' }
   else greeting = 'Night!'
