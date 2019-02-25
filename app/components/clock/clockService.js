@@ -68,7 +68,7 @@ function _showTime() {
   minute = (minute < 10) ? "0" + minute : minute;
   second = (second < 10) ? "0" + second : second;
 
-  let time = hour + ":" + minute + ":" + second + " " + amPm;
+  let time = hour + ":" + minute + ":" + " " + amPm;
   document.getElementById("clock-display").innerText = time;
   document.getElementById("clock-display").textContent = time;
 
