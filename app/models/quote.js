@@ -7,8 +7,8 @@ export default class Quote {
 
   getTemplate() {
     return `
-    <p>${this.body}</p>
-    <p>-${this.author}</p>
+    <p  class="quote">${this.body}</p>
+    <p class="quote">-${this.author}</p>
     `
   }
 }

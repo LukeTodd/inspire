@@ -83,6 +83,7 @@ margin-right: 5px;
 .degree-display{
   padding-top: 10px;
   text-align: center;
+    font-family: 'Source Code Pro', monospace; 
 }
 
 .w-icon{
@@ -128,12 +129,32 @@ margin-right: 5px;
   border-width: 1px;
   border-color: white;
 }
-.clock {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    color: #17D4FE;
-    font-size: 60px;
-    font-family: Orbitron;
-    letter-spacing: 7px;
+#clock-display{
+  color:white;
+  text-shadow: 1px 1px black;
+}
+#month{
+    color:white;
+  text-shadow: 1px 1px black;
+    font-family: 'Righteous', cursive;
+}
+.clock-display{
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 5px 2px 5px 2px;
+    font-family: 'Righteous', cursive;
+}
+.greeting-display{
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 35px;
+  font-family: 'Righteous', cursive;
+}
+#date-time{
+  margin-top: 100px;
+}
+.quote{
+  font-family: 'Source Code Pro', monospace; 
+}

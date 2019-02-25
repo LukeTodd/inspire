@@ -55,7 +55,7 @@ export default class TodoService {
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
 		let checkBox = document.getElementById("todo-list")
-		debugger
+
 		let description = _state.todos.description
 		if (checkBox.checked == true) (todo.completed = true)
 		else todo.completed = false
