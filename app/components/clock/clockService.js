@@ -48,12 +48,12 @@ function _showTime() {
 
 
   if (hour == 0) {
-    hour = 12;
+    hour = 12
   }
 
   if (hour > 12) {
-    hour = hour - 12;
-    amPm = "PM";
+    hour = hour - 12
+    amPm = "PM"
   }
 
 
@@ -65,11 +65,11 @@ function _showTime() {
   document.getElementById("greeting").innerHTML = greeting
 
 
-  let time = hour + ":" + minute + " " + amPm;
-  document.getElementById("clock-display").innerText = time;
-  document.getElementById("clock-display").textContent = time;
+  let time = hour + ":" + minute + " " + amPm
+  document.getElementById("clock-display").innerText = time
+  document.getElementById("clock-display").textContent = time
 
-  setInterval(_showTime, 500);
+  setInterval(_showTime, 500)
 }
 
 export default class ClockService {
