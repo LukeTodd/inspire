@@ -67,7 +67,7 @@ function _showTime() {
 
   let time = hour + ":" + minute + " " + amPm
   document.getElementById("clock-display").innerText = time
-  document.getElementById("clock-display").textContent = time
+  // document.getElementById("clock-display").textContent = time
 
   setInterval(_showTime, 500)
 }
