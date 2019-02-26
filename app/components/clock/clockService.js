@@ -56,6 +56,9 @@ function _showTime() {
     amPm = "PM"
   }
 
+  hour = (hour < 10) ? "0" + hour : hour
+  minute = (minute < 10) ? "0" + minute : minute
+  second = (second < 10) ? "0" + second : second
 
 
   if (hour < 10 && amPm == 'AM' || hour >= 4 && hour < 10 && amPm == 'AM') { greeting = 'Morning!' }
@@ -67,7 +70,7 @@ function _showTime() {
 
   let time = hour + ":" + minute + " " + amPm
   document.getElementById("clock-display").innerText = time
-  // document.getElementById("clock-display").textContent = time
+  document.getElementById("clock-display").textContent = time
 
   setInterval(_showTime, 500)
 }
