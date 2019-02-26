@@ -159,3 +159,8 @@ margin-right: 5px;
 .quote{
   font-family: 'Source Code Pro', monospace; 
 }
+.counter{
+  text-shadow: 1px 1px black;
+  text-align: center;
+  font-size: 13px;
+}

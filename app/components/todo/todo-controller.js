@@ -5,10 +5,12 @@ const _todoService = new TodoService()
 function _drawTodos() {
 	let template = ''
 	let todos = _todoService.Todos
+	let count = _todoService.todoCounter()
 	todos.forEach(todo => {
 		template += todo.getTemplate()
 	})
 	document.querySelector('#todos').innerHTML = template
+	document.querySelector('#count').innerHTML = count.toString()
 }
 
 function _drawError() {
@@ -22,6 +24,7 @@ export default class TodoController {
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.getTodos()
+
 
 		// Don't forget to add your subscriber
 	}
@@ -46,6 +49,7 @@ export default class TodoController {
 		// ask the service to run the remove todo with this id
 		_todoService.removeTodo(todoId)
 	}
+
 
 
 

@@ -37,6 +37,7 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				let data = res.data.data.map(t => new Todo(t))
+				console.log('todos:', data)
 				_setState('todos', data)
 				// WHAT DO YOU DO WITH THE RESPONSE?
 			})
@@ -54,19 +55,26 @@ export default class TodoService {
 
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
-		let checkBox = document.getElementById("todo-list")
+		todo.completed = !todo.completed
 
-		let description = _state.todos.description
-		if (checkBox.checked == true) (todo.completed = true)
-		else todo.completed = false
 
-		if (checkBox.checked == true) { localStorage.setItem('todo-list', checkBox.checked) }
+		// let checkBox = document.getElementById("todo-list")
+
+		// let description = _state.todos.description
+		// if (checkBox.checked == true) (todo.completed = true)
+		// else todo.completed = false
+
+
+		// if (checkBox.checked == true) { localStorage.setItem('todo-list', checkBox.checked) }
 		// Be sure to change the completed property to its opposite
 		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
 		todoApi.put(todoId, todo)
 			.then(res => {
-				todo = res.data.data.map(t => new Todo(t))
-				_setState('todos', todo)
+				// console.log(res)
+				// return
+				// todo = res.data.data.map(t => new Todo(t))
+				// _setState('todos', todo)
+				this.getTodos()
 
 				// _setState('todos', data)
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
@@ -82,5 +90,7 @@ export default class TodoService {
 		// This one is on you to write.... 
 		// The http method is delete at the todoId
 	}
-
+	todoCounter() {
+		return _state.todos.length
+	}
 }
